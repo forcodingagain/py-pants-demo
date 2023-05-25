@@ -1,0 +1,8 @@
+repos:
+-   repo: local
+    hooks:
+    -   id: make
+        name: make
+        entry: make check
+        language: system
+        types: [python]
