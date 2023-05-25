@@ -1,0 +1,108 @@
+[project]
+name = "pyqt-demo"
+version = "0.1.0"
+description = "Add a short description here"
+authors = [
+    { name = "zhongxiang", email = "zhongxiang@akulaku.com" }
+]
+dependencies = []
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.black]
+line-length = 120
+
+[tool.ruff]
+src = ["src"]
+# format = "grouped"
+
+# Enable pycodestyle (`E`) and Pyflakes (`F`) codes by default.
+select = [
+    "E",
+    "F",
+    "I",
+    "RUF",
+    "W",
+    "T20",
+    "ARG",
+    "N",
+    "C90",
+    "C4",
+    "EM",
+    "ISC",
+    "ICN",   # flake8-import-conventions (ICN)
+    "G",      # flake8-logging-format(G)
+    "ARG",    # flake8-typing-imports (ARG)
+]
+
+ignore = []
+
+# Allow autofix for all enabled rules (when `--fix`) is provided.
+fixable = [
+    "E",
+    "F",
+    "I",
+    "RUF",
+    "W",
+    "T20",
+    "ARG",
+    "N",
+    "C90",
+    "C4",
+    "EM",
+    "ISC",
+    "ICN",   # flake8-import-conventions (ICN)
+    "G",      # flake8-logging-format(G)
+    "ARG",    # flake8-typing-imports (ARG)
+]
+unfixable = ["RUF001"]
+
+# Exclude a variety of commonly ignored directories.
+respect-gitignore = true
+
+# include
+include = [
+    "hello_world/**/*.py"
+]
+
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
+
+# Same as Black.
+line-length = 120
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+# Assume Python 3.8.
+target-version = "py38"
+
+[tool.ruff.mccabe]
+# Unlike Flake8, default to a complexity level of 10.
+max-complexity = 5
